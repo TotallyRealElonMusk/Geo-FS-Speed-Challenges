@@ -19,7 +19,7 @@ The Nav map will display the parkour for the user. The HSI heading, found on the
 The dev version is basically the same as the normal version, except for some minor differences. Already, the user will not have a drop-down display showing the parkours, but will have an input box where they will be able to put the JSON in. They will also not have any leaderoard.
 
 # **How to create your own parkour**
-This Github repo is equipped with several instruments to create your own parkour. I personally use Google Earth Pro too make my coordinates. To start, I create a folder where I will have all my points. 
+This Github repo is equipped with several instruments to create your own parkour. I personally use Google Earth Pro too make my coordinates. To start, I create a folder where I will have all my points.
 ![Image](https://cdn.discordapp.com/attachments/771661854619205642/992840072573497454/unknown.png)
 Once in that folder, I can just simply add all the waypoints in Google Earth with the New Placemark option, represented with a pin in the taskbar. 
 ![Image](https://cdn.discordapp.com/attachments/771661854619205642/992840802545963110/unknown.png)
