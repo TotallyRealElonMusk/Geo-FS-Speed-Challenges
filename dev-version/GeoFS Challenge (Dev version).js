@@ -4,8 +4,8 @@
 // @version      0.2
 // @description  An addon for challenges in Geo-FS
 // @author       Elon Musk
-// @match http://*/geofs.php*
-// @match https://*/geofs.php*
+// @match https://beta.geo-fs.com/geofs.php
+// @match http://beta.geo-fs.com/geofs.php
 // @run-at document-end
 // @grant        none
 // ==/UserScript==
@@ -72,7 +72,7 @@ async function spawnModel(i) {
   var coordX = (Math.cos(toRadians(θb))) * (Math.sin(toRadians(diff(Lb, La))))
   var coordY = (Math.cos(toRadians(θa))) * (Math.sin(toRadians(θb))) - (Math.sin(toRadians(θa))) * (Math.cos(toRadians(θb))) * (Math.cos(toRadians(diff(Lb, La))))
   var β = Math.atan2(coordX, coordY)
-  brng = (β * 180 / Math.PI + 360) % 360
+  var brng = (β * 180 / Math.PI + 360) % 360
   geofs.objects.objectList = [{
     "location": [xPosition, yPosition, altPosition],
     "url": "https://raw.githubusercontent.com/TotallyRealElonMusk/Geo-FS-Speed-Challenges/main/3d-models/arrow.glb",
@@ -95,6 +95,7 @@ async function theLoop() {
     var Y = geofs.aircraft.instance.llaLocation[1];
     var res = await checkIf(X, Y, i)
     if (res === true) {
+        geofs.lastFlightCoordinates = {0:geofs.aircraft.instance.llaLocation[0], 1:geofs.aircraft.instance.llaLocation[1], 2: geofs.aircraft.instance.llaLocation[2], 3: geofs.aircraft.instance.htr[0], 4: true}
       console.log("i has been added")
       i += 1
       deleteModels()
@@ -294,7 +295,7 @@ window.secondInitialise = () => {
     createOverlay()
     ui.panel.toggle(".geofs-map-list");
     geofs.preferences.crashDetection = true
-    
+
   }
 
 }
