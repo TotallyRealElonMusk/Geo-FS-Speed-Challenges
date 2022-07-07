@@ -204,7 +204,7 @@ async function end() {
   //console.log(`Average alt is ${averageAlt}`)
   var averageSpd = await getSpdMedian()
   //console.log(`Average speed is ${averageSpd}`)
-  var score = 10000 * (averageAlt / 2 ** -1) * ((timeDiff ** 2) ** -1) * averageSpd
+    var score = 10000 * ((averageAlt / 2) ** -1) * ((timeDiff/3) ** -1) * averageSpd
   // get seconds
   //console.log("Parkour finished, you took " + Math.round(timeDiff* 100) / 100 + " seconds");
   var fScore = Math.round(score)
