@@ -1,13 +1,14 @@
 // ==UserScript==
 // @name         Geo-FS Speed Challenges
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      1.0
 // @description  An addon for challenges in Geo-FS
 // @author       Elon Musk
-// @match http://*/geofs.php*
-// @match https://*/geofs.php*
+// @match http://beta.geo-fs.com/geofs.php
+// @match https://beta.geo-fs.com/geofs.php
 // @run-at document-end
 // @grant        none
+// @namespace https://github.com/TotallyRealElonMusk/Geo-FS-Speed-Challenges
 // ==/UserScript==
 const options = {
     method:"POST"
