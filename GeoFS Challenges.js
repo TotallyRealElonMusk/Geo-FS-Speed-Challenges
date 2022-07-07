@@ -210,14 +210,14 @@ async function end() {
     //console.log(`Average alt is ${averageAlt}`)
     var averageSpd = await getSpdMedian()
     //console.log(`Average speed is ${averageSpd}`)
-    var score = 10000 * (averageAlt / 2 ** -1) * ((timeDiff ** 2) ** -1) * averageSpd
+    var score = 10000 * ((averageAlt / 2) ** -1) * ((timeDiff/3) ** -1) * averageSpd
     // get seconds
     //console.log("Parkour finished, you took " + Math.round(timeDiff* 100) / 100 + " seconds");
     var fScore = Math.round(score)
     var finalScore = `Your score is: ${fScore}`
     var scoreHTML = document.getElementById("score")
     scoreHTML.innerHTML = finalScore;
-    validateScore(finalScore,timeDiff)
+    validateScore(fScore,timeDiff)
     //var score =
 }
 //let startInput = "q";
@@ -229,7 +229,7 @@ async function end() {
 //    }
 //})
 async function validateScore(score,timeDiff){
-    await fetch(`https://api.geofsbuildings.com/challenges/inputscore?name=${challengeName}&user=${userName}&plane=${geofs.aircraft.instance.aircraftRecord.name}&time=${timeDiff}&score=${score}`)
+    await fetch(`https://api.geofsbuildings.com/challenges/inputscore?name=${challengeName}&user=${userName}&plane=${geofs.aircraft.instance.aircraftRecord.name}&time=${timeDiff}&score=${fScore}`)
         .then(res => res.json())
         .then(data => listOfData = data)
 }
