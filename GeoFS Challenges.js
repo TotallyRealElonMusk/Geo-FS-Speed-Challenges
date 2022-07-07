@@ -228,7 +228,7 @@ async function end() {
 //        else { console.log("already started") }
 //    }
 //})
-async function validateScore(score,timeDiff){
+async function validateScore(fScore,timeDiff){
     await fetch(`https://api.geofsbuildings.com/challenges/inputscore?name=${challengeName}&user=${userName}&plane=${geofs.aircraft.instance.aircraftRecord.name}&time=${timeDiff}&score=${fScore}`)
         .then(res => res.json())
         .then(data => listOfData = data)
