@@ -11,6 +11,18 @@
 // @namespace https://github.com/TotallyRealElonMusk/Geo-FS-Speed-Challenges
 // ==/UserScript==
 
+
+let itv = setInterval(
+    function(){
+        try{
+            if(window.ui && window.flight){
+                spawnHTML();
+                clearInterval(itv);}
+
+        }catch(err){}
+    }
+    ,500);
+
 const parkour = []
 var x = false
 var init = false
@@ -383,11 +395,6 @@ async function getParkour(challengeName) {
   return data
 }
 
-async function turnON() {
-    await sleep(5000)
-      spawnHTML()
-}
-turnON()
 //external function
 
 function orientation3(a, b, c) {
