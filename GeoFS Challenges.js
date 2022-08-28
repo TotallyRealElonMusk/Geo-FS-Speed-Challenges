@@ -4,8 +4,8 @@
 // @version      1.0
 // @description  An addon for challenges in Geo-FS
 // @author       Elon Musk
-// @match http://beta.geo-fs.com/geofs.php
-// @match https://beta.geo-fs.com/geofs.php
+// @match http://www.geo-fs.com/geofs.php
+// @match https://www.geo-fs.com/geofs.php
 // @run-at document-end
 // @grant        none
 // @namespace https://github.com/TotallyRealElonMusk/Geo-FS-Speed-Challenges
